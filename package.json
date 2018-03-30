@@ -1,0 +1,38 @@
+{
+  "name": "git-retry",
+  "version": "0.0.0",
+  "description": "Fault-tolerant git retry wrapper",
+  "license": "MIT",
+  "repository": "blond/git-retry",
+  "author": "Andrew Abramov <mail@blond.im> (github.com/blond)",
+  "keywords": [
+    "git",
+    "exec",
+    "retry",
+    "fault-tolerant",
+    "wrapper"
+  ],
+  "main": "lib/git-retry.js",
+  "files": [
+    "lib"
+  ],
+  "engines": {
+    "node": "8"
+  },
+  "dependencies": {
+    "execa": "0.10.0",
+    "p-retry": "1.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.0.5",
+    "coveralls": "^3.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-pedant": "^1.0.0",
+    "nyc": "^11.6.0"
+  },
+  "scripts": {
+    "pretest": "eslint .",
+    "test": "nyc mocha",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+  }
+}

@@ -8,13 +8,10 @@ import execGit from './exec-git/exec-git';
 import isGitTransientError from './is-git-transient-error/is-git-transient-error';
 
 const DEFAULT_RETRY_OPTIONS = {
-    retries: 5,
-    minTimeout: 1 * 1000, // 1 second
-    maxTimeout: 3 * 1000, // 3 second
-    maxRetryTime: Infinity,
-    randomize: false,
-    forever: false,
-    unref: false
+    // The maximum amount of times to retry the operation.
+    retries: 5, // means do it once, then retry it 5 times
+    // The number of milliseconds before starting the first retry.
+    minTimeout: 3 * 1000 // 3 second
 };
 
 /**

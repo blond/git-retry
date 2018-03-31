@@ -40,7 +40,7 @@ Usage
 ```js
 const gitRetry = require('git-retry');
 
-gitRetry('pull --all', { retries: 5 })
+gitRetry('git', ['pull', '--all'], { retries: 5 }, { shell: true })
     .then(({ stdout, stderr }) => console.log(`git pulled, see log: ${stdout}`))
     .catch(() => console.error('git failed'));
 ```
@@ -48,27 +48,35 @@ gitRetry('pull --all', { retries: 5 })
 API
 ---
 
-### gitRetry(command, [retryOptions[, execOptions]])
+### gitRetry([bin, ]args[, retryOptions[, execOptions]])
 
 Executes git command.
 
-### command
+#### bin
 
-Type: `string|string[]`
+Type: `string`
 
-Git command or list of git command arguments.
+Default: `git`
 
-### retryOptions
+The name or path of the executable file to run `git`.
+
+#### args
+
+Type: `string[]`
+
+Arguments of git command.
+
+#### retryOptions
 
 Type: `Object`
 
 Options are passed to the [`retry`](https://github.com/tim-kos/node-retry#retryoperationoptions) module.
 
-### execOptions
+#### execOptions
 
 Type: `Object`
 
-Options are passed to the [`exec`](https://github.com/sindresorhus/execa#options) module.
+Options are passed to the [`execa`](https://github.com/sindresorhus/execa#options) module.
 
 License
 -------

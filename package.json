@@ -1,0 +1,40 @@
+{
+  "name": "git-retry",
+  "version": "0.0.0",
+  "description": "Fault-tolerant git retry wrapper",
+  "license": "MIT",
+  "repository": "blond/git-retry",
+  "author": "Andrew Abramov <mail@blond.im> (github.com/blond)",
+  "keywords": [
+    "git",
+    "exec",
+    "retry",
+    "fault-tolerant",
+    "wrapper"
+  ],
+  "main": "lib/git-retry.js",
+  "files": [
+    "lib"
+  ],
+  "engines": {
+    "node": "8"
+  },
+  "dependencies": {
+    "debug": "3.1.0",
+    "execa": "0.10.0",
+    "p-retry": "1.0.0"
+  },
+  "devDependencies": {
+    "@types/debug": "0.0.30",
+    "@types/execa": "^0.9.0",
+    "@types/jest": "^22.2.2",
+    "@types/node": "^9.6.1",
+    "@types/p-retry": "^1.0.1",
+    "jest": "^22.4.3",
+    "ts-jest": "^22.4.2",
+    "typescript": "^2.8.1"
+  },
+  "scripts": {
+    "test": "jest --forceExit --coverage --verbose"
+  }
+}
